@@ -14,6 +14,14 @@ body{
     text-decoration: underline;
 }
 
+.menu-active{
+    color: white !important;
+    background-color: #5D5FEF !important;
+    border: 1px solid #5D5FEF;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .bangla{
     border: 2px solid;
 }
@@ -40,8 +48,8 @@ body{
     background-color: #5D5FEF;
 }
 
-.btn-custom :active{
-    color: white;
-    background-color: #5D5FEF;
+.active{
+    color: white !important;
+    background-color: #5D5FEF !important;
 }
 
