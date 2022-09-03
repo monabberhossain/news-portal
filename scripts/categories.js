@@ -20,20 +20,20 @@ const displayCategories = (data) => {
         // ................................................................................................
         categoryList.addEventListener('click', function(){
             id = (category.category_id);
-            const loadNews = async(id) => {
+            const loadNewsList = async(id) => {
                 const url = `https://openapi.programming-hero.com/api/news/category/${id}`
                 try{
                     const res = await fetch(url);
                     const data = await res.json();
                     //console.log(data.data[0]);
-                    displayNews(data.data);
+                    displayNewsList(data.data);
                 }
                 catch(error){
                     console.log(error);
                 }
             }
 
-            const displayNews = (datas) => {
+            const displayNewsList = (datas) => {
                 //console.log(datas);
                 const newsSection = document.getElementById('news-section');
                 datas.forEach(data => {                    
@@ -41,11 +41,11 @@ const displayCategories = (data) => {
                     newsList.classList.add('news-list', 'd-inline-flex');
                     console.log(data);
                     newsList.innerHTML = `
-                        <div class="col-1 col-sm-1 col-md-4 col-lg-4 py-3 img-box">
+                        <div class="col-lg-3 col-md-5 py-3 img-box">
                             <img src="${data.thumbnail_url ?data.thumbnail_url: 'Thumbnail unavailable'}" alt="">
                         </div>
-                        <div class="col-1 col-sm-1 col-md-8 col-lg-8 py-3 text-box">
-                            <h2>${data.title ? data.title: 'Title Not Found'}</h2>
+                        <div class="col-lg-9 col-md-7 py-3 text-box">
+                            <h2><a href="#">${data.title ? data.title: 'Title Not Found'}</a></h2>
                             <p class="text-black-50 short-para">${data.details ? data.details: 'Description Not Found'}</p>
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="d-inline-flex">
@@ -62,7 +62,7 @@ const displayCategories = (data) => {
                                     <p>${data.rating.number}</p>
                                 </div>
                                 <div>
-                                    <button>Read More</button>
+                                    <a id="read-more" onClick(${data.id}) class="text-decoration-none btn btn-custom fs-4 fw-semibold" href = "#">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@ const displayCategories = (data) => {
                 });               
             }
 
-            loadNews(id)
+            loadNewsList(id)
         })
         // ...................................................................................................
         categoryList.innerHTML = `

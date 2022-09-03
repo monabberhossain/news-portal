@@ -1,6 +1,10 @@
 body{
     background-color: #F6F6F6;
 }
+
+a{
+    text-decoration: none;
+}
 .blue-color{
     color: #5D5FEF;
 }
