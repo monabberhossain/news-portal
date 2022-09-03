@@ -33,7 +33,10 @@ const displayCategories = (data) => {
             const displayNewsList = (datas) => {
 
                 const newsSection = document.getElementById('news-section');
-                datas.forEach(data => {                  
+                const numberOfArticles = document.getElementById('number-of-articles');
+                let i = 0;
+                datas.forEach(data => {
+                    i++;                 
                     const newsList = document.createElement('div');
                     newsList.classList.add('news-list', 'd-inline-flex');
 
@@ -85,7 +88,8 @@ const displayCategories = (data) => {
                         </div>
                     `;
                     newsSection.appendChild(newsList);
-                });               
+                });                
+                numberOfArticles.innerText = datas.length + ' News Found in the Category.';
             }
 
             loadNewsList(id);            
