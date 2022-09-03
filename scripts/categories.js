@@ -30,8 +30,9 @@ const displayCategories = (data) => {
                 }
             }
 
-            const displayNewsList = (datas) => {                
-                
+            const displayNewsList = (datas) => {
+                console.log(datas);
+                toggleLoader(true);
                 const newsSection = document.getElementById('news-section');                
                 newsSection.innerHTML = '';
                 const numberOfArticles = document.getElementById('number-of-articles');
@@ -115,10 +116,19 @@ const displayCategories = (data) => {
                 `;
             }
             loadNewsList(id);
+            toggleLoader(false);
         })
         categoryList.innerHTML = `
             <a class="m-2 text-black-50 text-decoration-none fw-semibold list-item" href="#">${category.category_name}</a>
         `;
+        const toggleLoader = isLoading => {
+            const loaderSection = document.getElementById('loader-section');
+            if (isLoading) {
+                loaderSection.classList.remove('d-none');
+            } else {
+                loaderSection.classList.add('d-none');
+            }
+        }
     categoryMenu.appendChild(categoryList);        
     });
     
