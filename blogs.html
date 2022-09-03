@@ -50,36 +50,93 @@
                 </nav>
             </div>
 
-            <nav class="d-flex align-items-center justify-content-between mt-2">
-                <a class="m-2 text-black-50 text-decoration-none fw-semibold nav-item" href="#">News</a>
-            </nav>
-
         </header>
 
         <main>
             <section class="my-5">
                 <article class="p-2">
                     <div>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa rem, laborum omnis non, architecto eum quasi porro aliquid alias maxime laboriosam, labore consequatur corrupti a aliquam odit ducimus error molestias quo cupiditate? Mollitia deserunt quae rerum magnam ad hic quasi? Iure eveniet a nam, cum veniam odit facilis nihil repudiandae.</p>
+                        <h3>What is the differences between var, let and const?</h3>
+                        <p>
+                            <h5>var:</h5>
+                            <ol>
+                                <li>The scope of a var variable is functional scope.</li>
+                                <li>It can be updated and re-declared into the scope.</li>
+                            </ol>
+                            <h5>let:</h5>
+                            <ol>
+                                <li>The scope of a let variable is block scope.</li>
+                                <li>t can be updated but cannot be re-declared into the scope.</li>
+                            </ol>
+                            <h5>const:</h5>
+                            <ol>
+                                <li>The scope of a const variable is block scope.</li>
+                                <li>It cannot be updated or re-declared into the scope.</li>
+                            </ol>
+                        </p>
                     </div>
                 </article>
                 <article class="p-2">
                     <div>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa rem, laborum omnis non, architecto eum quasi porro aliquid alias maxime laboriosam, labore consequatur corrupti a aliquam odit ducimus error molestias quo cupiditate? Mollitia deserunt quae rerum magnam ad hic quasi? Iure eveniet a nam, cum veniam odit facilis nihil repudiandae.</p>
+                        <h3>What is the differences between arrow function and regular function?</h3>
+                        <p>
+                            <h5>Regular Function:</h5>
+                            <ol>
+                                <li>Inside of a regular JavaScript function, (this) value is dynamic.</li>
+                                <li>The regular function can easily construct objects.</li>
+                                <li>Inside the body of a regular function, arguments is a special array-like object containing the list of arguments with which the function has been invoked.</li>
+                            </ol>
+                            <h5>Arrow Function:</h5>
+                            <ol>
+                                <li>Inside of an arrow function (this) value always equals to (this) value from the outer function.</li>
+                                <li>An arrow function cannot be used as a constructor.</li>
+                                <li>On the other side, no arguments special keyword is defined inside an arrow function.</li>
+                            </ol>
+                        </p>
                     </div>
                 </article>
                 <article class="p-2">
                     <div>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa rem, laborum omnis non, architecto eum quasi porro aliquid alias maxime laboriosam, labore consequatur corrupti a aliquam odit ducimus error molestias quo cupiditate? Mollitia deserunt quae rerum magnam ad hic quasi? Iure eveniet a nam, cum veniam odit facilis nihil repudiandae.</p>
+                        <h3>What is the differences between map, foreach, filter and find?</h3>
+                        <p>
+                            <h5>Map</h5>
+                            <ol>
+                                <li>map() when you want to transform elements in an array.</li>
+                                <li>map() generate a new array based on your existing array.</li>
+                            </ol>
+                            <h5>Foreach</h5>
+                            <ol>
+                                <li>forEach() is great you need to execute a function for each individual element in an array.</li>
+                                <li>foreach() takes a callback function and run that callback function on each element of array one by one.</li>
+                            </ol>
+                            <h5>Filter</h5>
+                            <ol>
+                                <li>filter() when you want to select a subset of multiple elements from an array.</li>
+                                <li>filter() does not update the existing array it will return a new filtered array every time.</li>
+                            </ol>
+                            <h5>Find</h5>
+                            <ol>
+                                <li>find() When you want to select a single element from an array.</li>
+                                <li>find() is also a search functions but this function returns only one match in an array.</li>
+                            </ol>
+                        </p>
                     </div>
                 </article>
                 <article class="p-2">                
                     <div>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa rem, laborum omnis non, architecto eum quasi porro aliquid alias maxime laboriosam, labore consequatur corrupti a aliquam odit ducimus error molestias quo cupiditate? Mollitia deserunt quae rerum magnam ad hic quasi? Iure eveniet a nam, cum veniam odit facilis nihil repudiandae.</p>
+                        <h3>What is the purpose of using a template string?</h3>
+                        <p>emplate literals are a new feature introduced in ECMAScript 2015/ ES6. It provides an easy way to create multiline strings and perform string interpolation. Template literals are the string literals and allow embedded expressions.</p>
+                        <p>
+                            Before ES6, template literals were called as template strings. Template literals can contain placeholders, which are indicated by the dollar sign and curly braces ($(expression}). Inside the backticks, if we want to use an expression, then we can place the expression.
+                        </p>
+                        <h5>Multiline strings</h5>
+                        <li>In normal strings, we have to use an escape sequence \n to give a new line for creating a multiline string. However, in template literals, there is no need to use \n because string ends only when it gets backtick(`) character.</li>
+                        <h5>String Interpolation</h5>
+                        <li>ES6 template literals support string interpolation. Template literals can use the placeholders for string substitution. To embed expressions with normal strings, we have to use the ${} syntax.</li>
+                        <h5>Tagged templates</h5>
+                        <li>agged templates are one of the more advanced form of template literals. Tagged template literals allow us to parse template literals with a function.</li>
+                        <h5>Raw Strings</h5>
+                        <li>The template literal raw method allows the accessing of raw strings as they were entered. In addition to this, the string.raw() method exists for creating the raw strings as similar to the default template function. It allows us to write the backslashes as we would in a regular expression literal.</li>
                     </div>
                 </article>
             </section>
