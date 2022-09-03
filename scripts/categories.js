@@ -37,10 +37,10 @@ const displayCategories = (data) => {
                 const numberOfArticles = document.getElementById('number-of-articles');
                 datas.forEach(data => {
                     const newsList = document.createElement('div');
-                    newsList.classList.add('news-list', 'd-inline-flex');
+                    newsList.classList.add('news-list', 'd-flex', 'flex-column',  'flex-sm-column', 'flex-md-row', 'flex-lg-row');
                     
                     newsList.innerHTML = `
-                        <div class="col-lg-3 col-md-5 py-3 img-box">
+                        <div class="col-lg-3 col-md-5 py-3 img-box text-center">
                             <img src="${data.thumbnail_url ?data.thumbnail_url: 'Thumbnail unavailable'}" alt="">
                         </div>
                         <div class="col-lg-9 col-md-7 py-3 text-box">
@@ -89,9 +89,29 @@ const displayCategories = (data) => {
             const displayNews = data => {
                 const modalTitle = document.getElementById('newsDetailsModalLabel');
                 modalTitle.innerHTML = `<h2>${data[0].title ? data[0].title: 'No Title Found.'}</h2>`;
+                const newsPhoto = document.getElementById('img-section');
+                newsPhoto.innerHTML = `
+                    <img class="img-fluid" src="${data[0].image_url}" alt="">
+                `;
                 const newsDetails = document.getElementById('news-details');
                 newsDetails.innerHTML = `
                     <p>Realease Date: ${data[0].details ? data[0].details: 'No Release Date Found.'}</p>        
+                `;
+                const extraInfo = document.getElementById('extra-info');
+                extraInfo.innerHTML = `
+                    <div class="d-inline-flex col-4">
+                        <img src="${data[0].author.img ? data[0].author.img: 'Thumbnail unavailable'}" class="tiny-image img-fluid" alt="">
+                        <div class="ms-1">
+                            <h5>${data[0].author.name ? data[0].author.name: 'Unknown Author'}</h5>
+                            <h6>${data[0].author.published_date ? data[0].author.published_date: 'Date not found'}</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <p><i class="fa-solid fa-eye"></i> ${data[0].total_view ? data[0].total_view: 'Data not found'}</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Ratings: ${data[0].rating.number} </p>
+                    </div>
                 `;
             }
             loadNewsList(id);
